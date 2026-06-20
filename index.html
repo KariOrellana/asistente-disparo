@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asistente de disparo · Sony α6400</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%238a63d8'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cpolygon points='32,21 41,27 41,38 32,44 23,38 23,27' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23fff'/%3E%3C/svg%3E" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,6 +80,14 @@
     .tip-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.45; color: #514a68; }
     .tip-num { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: #f4eefc; border: 1px solid #e3d8f6; color: #8a63d8; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
     .foot { margin: 22px 4px 0; font-size: 11.5px; color: #9a8fb5; line-height: 1.5; font-family: 'Space Mono', monospace; }
+    .brandrow { display: flex; align-items: center; gap: 13px; }
+    .brand-logo { flex-shrink: 0; filter: drop-shadow(0 8px 18px rgba(108,68,192,.35)); }
+    .credit { margin: 26px 0 0; padding: 18px 18px 20px; background: linear-gradient(135deg, #f6f0fe 0%, #fbf8ff 100%); border: 1px solid #ece3f9; border-radius: 16px; text-align: center; }
+    .credit-by { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #6c6385; }
+    .credit-by strong { color: #6c44c0; font-weight: 700; }
+    .credit-msg { margin-top: 7px; font-size: 13px; line-height: 1.5; color: #7a7194; }
+    .credit-mail { display: inline-block; margin-top: 11px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: #ffffff; background: #8a63d8; text-decoration: none; padding: 9px 18px; border-radius: 999px; box-shadow: 0 8px 20px -8px #8a63d8cc; transition: all .18s ease; }
+    .credit-mail:hover { background: #7657c9; transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -250,6 +259,26 @@
       );
     }
 
+    function Logo() {
+      return (
+        <svg className="brand-logo" viewBox="0 0 64 64" width="46" height="46" role="img" aria-label="Asistente de disparo">
+          <defs>
+            <linearGradient id="logoBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#9a76e6" /><stop offset="100%" stopColor="#6c44c0" /></linearGradient>
+            <radialGradient id="logoWell" cx="50%" cy="42%" r="60%"><stop offset="0%" stopColor="#7e59c8" /><stop offset="100%" stopColor="#4f2f95" /></radialGradient>
+          </defs>
+          <polygon points="24,15 27,8 37,8 40,15" fill="url(#logoBody)" />
+          <rect x="4" y="14" width="56" height="43" rx="13" fill="url(#logoBody)" />
+          <rect x="4.8" y="14.8" width="54.4" height="41.4" rx="12.4" fill="none" stroke="#ffffff" strokeOpacity="0.16" strokeWidth="1.4" />
+          <circle cx="50" cy="23" r="2.4" fill="#ffffff" fillOpacity="0.75" />
+          <circle cx="32" cy="37" r="15" fill="url(#logoWell)" stroke="#ffffff" strokeOpacity="0.45" strokeWidth="2" />
+          <polygon points={heptagon(32, 37, 9.5)} fill="#ffffff" />
+          <polygon points={heptagon(32, 37, 9.5)} fill="none" stroke="#d8c4fb" strokeWidth="0.8" strokeLinejoin="round" />
+          <g stroke="#c9b4f0" strokeWidth="0.9">{[...Array(7)].map((_, i) => { const a = (Math.PI * 2 * i) / 7 - Math.PI / 2; return <line key={i} x1={32 + 9.5 * Math.cos(a)} y1={37 + 9.5 * Math.sin(a)} x2={32 + 3.5 * Math.cos(a)} y2={37 + 3.5 * Math.sin(a)} />; })}</g>
+          <circle cx="32" cy="37" r="3.2" fill="#8a63d8" />
+        </svg>
+      );
+    }
+
     function App() {
       const [sel, setSel] = useState({ subject: "retrato", light: "poca", motion: "quieto", priority: "desenfoque" });
       const [avail, setAvail] = useState([...LENS_ORDER]);
@@ -282,7 +311,10 @@
       return (
         <div className="wrap">
           <div className="inner">
-            <div className="eyebrow"><span className="dot" />α6400 · asistente de disparo</div>
+            <div className="brandrow">
+              <Logo />
+              <div className="eyebrow"><span className="dot" />α6400 · asistente de disparo</div>
+            </div>
             <h1>¿Qué saco ahora?</h1>
             <p className="lede">Elige tu situación y te digo qué lente montar y cómo dejar la cámara.</p>
 
@@ -365,6 +397,12 @@
             </div>
 
             <p className="foot">Valores de partida, no reglas fijas. Tu A6400 no estabiliza el cuerpo: la velocidad es tu defensa contra el movido con los Sigma f/1.4.</p>
+
+            <div className="credit">
+              <div className="credit-by">Creado por <strong>Karina Orellana</strong></div>
+              <div className="credit-msg">¿Quieres tu versión personalizada, para tu cámara y tus lentes? Escríbeme y la preparo para ti.</div>
+              <a className="credit-mail" href="mailto:karinaorellanamoreira@gmail.com?subject=Quiero%20mi%20versi%C3%B3n%20personalizada%20del%20Asistente%20de%20disparo">karinaorellanamoreira@gmail.com</a>
+            </div>
           </div>
         </div>
       );
