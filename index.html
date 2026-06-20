@@ -12,7 +12,7 @@
     .inner { width: 100%; max-width: 470px; }
     .eyebrow { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8a63d8; display: flex; align-items: center; gap: 8px; }
     .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: #8a63d8; box-shadow: 0 0 10px #b69aef; }
-    h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.05; margin: 12px 0 6px; letter-spacing: -0.5px; color: #2c2540; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 31px; line-height: 1.05; margin: 14px 0 6px; letter-spacing: -0.6px; background: linear-gradient(96deg, #2c2540 0%, #6c44c0 70%, #9171e0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .lede { color: #7a7194; font-size: 14px; line-height: 1.45; }
     .q { margin-top: 24px; }
     .q-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9a8fb5; margin-bottom: 10px; }
@@ -82,8 +82,9 @@
     .foot { margin: 22px 4px 0; font-size: 11.5px; color: #9a8fb5; line-height: 1.5; font-family: 'Space Mono', monospace; }
     .brandrow { display: flex; align-items: center; gap: 13px; }
     .brand-logo { flex-shrink: 0; filter: drop-shadow(0 8px 18px rgba(108,68,192,.35)); }
-    .credit { margin: 26px 0 0; padding: 18px 18px 20px; background: linear-gradient(135deg, #f6f0fe 0%, #fbf8ff 100%); border: 1px solid #ece3f9; border-radius: 16px; text-align: center; }
-    .credit-by { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #6c6385; }
+    .credit { margin: 28px 0 0; padding: 22px 20px 22px; background: linear-gradient(150deg, #f4ecfd 0%, #fbf8ff 60%, #f7f1fe 100%); border: 1px solid #e7dcf7; border-radius: 18px; text-align: center; box-shadow: 0 18px 40px -28px rgba(108,68,192,.45); }
+    .credit-logo { margin-bottom: 11px; }
+    .credit-by { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #6c6385; }
     .credit-by strong { color: #6c44c0; font-weight: 700; }
     .credit-msg { margin-top: 7px; font-size: 13px; line-height: 1.5; color: #7a7194; }
     .credit-mail { display: inline-block; margin-top: 11px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: #ffffff; background: #8a63d8; text-decoration: none; padding: 9px 18px; border-radius: 999px; box-shadow: 0 8px 20px -8px #8a63d8cc; transition: all .18s ease; }
@@ -259,22 +260,27 @@
       );
     }
 
-    function Logo() {
+    function Logo({ size = 50 }) {
+      const cx = 32, cy = 37;
       return (
-        <svg className="brand-logo" viewBox="0 0 64 64" width="46" height="46" role="img" aria-label="Asistente de disparo">
+        <svg className="brand-logo" viewBox="0 0 64 64" width={size} height={size} role="img" aria-label="KOM · Asistente de disparo">
           <defs>
-            <linearGradient id="logoBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#9a76e6" /><stop offset="100%" stopColor="#6c44c0" /></linearGradient>
-            <radialGradient id="logoWell" cx="50%" cy="42%" r="60%"><stop offset="0%" stopColor="#7e59c8" /><stop offset="100%" stopColor="#4f2f95" /></radialGradient>
+            <linearGradient id="logoBody" x1="0.1" y1="0" x2="0.85" y2="1"><stop offset="0%" stopColor="#a382ec" /><stop offset="52%" stopColor="#7d55d2" /><stop offset="100%" stopColor="#5a32ab" /></linearGradient>
+            <radialGradient id="logoWell" cx="50%" cy="36%" r="70%"><stop offset="0%" stopColor="#6a45b6" /><stop offset="100%" stopColor="#37206f" /></radialGradient>
+            <radialGradient id="logoOpen" cx="50%" cy="38%" r="65%"><stop offset="0%" stopColor="#5c3aab" /><stop offset="100%" stopColor="#2c1a5d" /></radialGradient>
           </defs>
-          <polygon points="24,15 27,8 37,8 40,15" fill="url(#logoBody)" />
-          <rect x="4" y="14" width="56" height="43" rx="13" fill="url(#logoBody)" />
-          <rect x="4.8" y="14.8" width="54.4" height="41.4" rx="12.4" fill="none" stroke="#ffffff" strokeOpacity="0.16" strokeWidth="1.4" />
-          <circle cx="50" cy="23" r="2.4" fill="#ffffff" fillOpacity="0.75" />
-          <circle cx="32" cy="37" r="15" fill="url(#logoWell)" stroke="#ffffff" strokeOpacity="0.45" strokeWidth="2" />
-          <polygon points={heptagon(32, 37, 9.5)} fill="#ffffff" />
-          <polygon points={heptagon(32, 37, 9.5)} fill="none" stroke="#d8c4fb" strokeWidth="0.8" strokeLinejoin="round" />
-          <g stroke="#c9b4f0" strokeWidth="0.9">{[...Array(7)].map((_, i) => { const a = (Math.PI * 2 * i) / 7 - Math.PI / 2; return <line key={i} x1={32 + 9.5 * Math.cos(a)} y1={37 + 9.5 * Math.sin(a)} x2={32 + 3.5 * Math.cos(a)} y2={37 + 3.5 * Math.sin(a)} />; })}</g>
-          <circle cx="32" cy="37" r="3.2" fill="#8a63d8" />
+          <polygon points="23,13 26,6 38,6 41,13" fill="url(#logoBody)" />
+          <rect x="3.5" y="12.5" width="57" height="46" rx="14.5" fill="url(#logoBody)" />
+          <rect x="4.7" y="13.7" width="54.6" height="43.6" rx="13.3" fill="none" stroke="#ffffff" strokeOpacity="0.22" strokeWidth="1.3" />
+          <circle cx="50.5" cy="21" r="2.3" fill="#ffffff" fillOpacity="0.85" />
+          <circle cx={cx} cy={cy} r="17" fill="url(#logoWell)" />
+          <circle cx={cx} cy={cy} r="17" fill="none" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="2" />
+          <circle cx={cx} cy={cy} r="13" fill="none" stroke="#ffffff" strokeOpacity="0.12" strokeWidth="0.8" />
+          <polygon points={heptagon(cx, cy, 13)} fill="#efe7fb" />
+          <g stroke="#b89cf0" strokeWidth="0.9" strokeLinecap="round">{[...Array(7)].map((_, i) => { const a = (Math.PI * 2 * i) / 7 - Math.PI / 2; return <line key={i} x1={cx + 13 * Math.cos(a)} y1={cy + 13 * Math.sin(a)} x2={cx + 9.2 * Math.cos(a)} y2={cy + 9.2 * Math.sin(a)} />; })}</g>
+          <circle cx={cx} cy={cy} r="9.3" fill="url(#logoOpen)" />
+          <circle cx={cx} cy={cy} r="9.3" fill="none" stroke="#ffffff" strokeOpacity="0.25" strokeWidth="0.8" />
+          <text x={cx} y={cy + 2.9} textAnchor="middle" fontFamily="'Space Grotesk', sans-serif" fontWeight="700" fontSize="7.7" letterSpacing="-0.4" fill="#ffffff">KOM</text>
         </svg>
       );
     }
@@ -399,6 +405,7 @@
             <p className="foot">Valores de partida, no reglas fijas. Tu A6400 no estabiliza el cuerpo: la velocidad es tu defensa contra el movido con los Sigma f/1.4.</p>
 
             <div className="credit">
+              <div className="credit-logo"><Logo size={42} /></div>
               <div className="credit-by">Creado por <strong>Karina Orellana</strong></div>
               <div className="credit-msg">¿Quieres tu versión personalizada, para tu cámara y tus lentes? Escríbeme y la preparo para ti.</div>
               <a className="credit-mail" href="mailto:karinaorellanamoreira@gmail.com?subject=Quiero%20mi%20versi%C3%B3n%20personalizada%20del%20Asistente%20de%20disparo">karinaorellanamoreira@gmail.com</a>
