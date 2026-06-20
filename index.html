@@ -4,91 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asistente de disparo · Sony α6400</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%238a63d8'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cpolygon points='32,21 41,27 41,38 32,44 23,38 23,27' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%236d4ae6'/%3E%3Ccircle cx='32' cy='32' r='25' fill='%232b1763'/%3E%3Cpolygon points='32,11 50,21 50,43 32,53 14,43 14,21' fill='%23efe7fb'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%232b1763'/%3E%3C/svg%3E" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    .wrap { min-height: 100vh; background: radial-gradient(120% 80% at 50% -10%, #f4ecff 0%, #f7f3fd 50%, #fbf9ff 100%); color: #2c2540; font-family: 'Inter', sans-serif; padding: 26px 18px 48px; display: flex; justify-content: center; }
+    .wrap { min-height: 100vh; background: radial-gradient(120% 80% at 50% -10%, #f4ecff 0%, #f7f3fd 50%, #fbf9ff 100%); color: #231a3b; font-family: 'Inter', sans-serif; padding: 26px 18px 48px; display: flex; justify-content: center; }
     .inner { width: 100%; max-width: 470px; }
-    .eyebrow { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8a63d8; display: flex; align-items: center; gap: 8px; }
-    .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: #8a63d8; box-shadow: 0 0 10px #b69aef; }
-    h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 31px; line-height: 1.05; margin: 14px 0 6px; letter-spacing: -0.6px; background: linear-gradient(96deg, #2c2540 0%, #6c44c0 70%, #9171e0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .eyebrow { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #6d4ae6; display: flex; align-items: center; gap: 8px; }
+    .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: #6d4ae6; box-shadow: 0 0 10px #b69aef; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 31px; line-height: 1.05; margin: 14px 0 6px; letter-spacing: -0.6px; background: linear-gradient(96deg, #231a3b 0%, #4e2fb5 70%, #8b6cf0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .lede { color: #7a7194; font-size: 14px; line-height: 1.45; }
     .q { margin-top: 24px; }
     .q-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9a8fb5; margin-bottom: 10px; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: #5a5270; background: #ffffff; border: 1px solid #e3d8f6; border-radius: 999px; padding: 9px 15px; cursor: pointer; transition: all .18s ease; -webkit-tap-highlight-color: transparent; }
-    .chip:hover { border-color: #b69aef; color: #2c2540; }
-    .chip:focus-visible { outline: 2px solid #8a63d8; outline-offset: 2px; }
-    .chip.on { background: #8a63d8; border-color: #8a63d8; color: #ffffff; font-weight: 600; box-shadow: 0 6px 18px -7px #8a63d8aa; }
+    .chip:hover { border-color: #b69aef; color: #231a3b; }
+    .chip:focus-visible { outline: 2px solid #6d4ae6; outline-offset: 2px; }
+    .chip.on { background: #6d4ae6; border-color: #6d4ae6; color: #ffffff; font-weight: 600; box-shadow: 0 6px 18px -7px #6d4ae6aa; }
     .chip.lens { padding-left: 34px; position: relative; }
     .chip.lens::before { content: ""; position: absolute; left: 14px; top: 50%; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%; border: 2px solid #cbb9ef; background: transparent; }
-    .chip.lens.on::before { border-color: #ffffff; background: #ffffff; box-shadow: inset 0 0 0 2px #8a63d8; }
+    .chip.lens.on::before { border-color: #ffffff; background: #ffffff; box-shadow: inset 0 0 0 2px #6d4ae6; }
     .hint { font-size: 11.5px; color: #9a8fb5; margin-top: 9px; line-height: 1.5; }
     .sit-chip { display: inline-flex; align-items: center; background: #f4eefc; border: 1px solid #e3d8f6; border-radius: 999px; overflow: hidden; }
-    .sit-load { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #6c44c0; background: transparent; border: none; padding: 9px 4px 9px 15px; cursor: pointer; }
+    .sit-load { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #4e2fb5; background: transparent; border: none; padding: 9px 4px 9px 15px; cursor: pointer; }
     .sit-x { color: #b9a3e8; font-weight: 700; font-size: 16px; padding: 0 12px 0 6px; cursor: pointer; line-height: 1; }
-    .sit-x:hover { color: #8a63d8; }
-    .add-chip { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: #8a63d8; background: transparent; border: 1px dashed #b69aef; border-radius: 999px; padding: 9px 15px; cursor: pointer; }
+    .sit-x:hover { color: #6d4ae6; }
+    .add-chip { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: #6d4ae6; background: transparent; border: 1px dashed #b69aef; border-radius: 999px; padding: 9px 15px; cursor: pointer; }
     .add-chip:hover { background: #f7f2fe; }
-    .sit-chip.on { background: #8a63d8; border-color: #8a63d8; }
+    .sit-chip.on { background: #6d4ae6; border-color: #6d4ae6; }
     .sit-chip.on .sit-load { color: #ffffff; }
     .sit-chip.on .sit-x { color: #e7dcfa; }
     .subj-form { margin-top: 12px; padding: 14px; background: #faf7ff; border: 1px solid #ece3f9; border-radius: 14px; }
     .subj-form .save-input { width: 100%; }
     .subj-base-label { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #9a8fb5; margin: 12px 0 8px; }
     .save-row { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
-    .save-input { flex: 1; font-family: 'Inter', sans-serif; font-size: 14px; color: #2c2540; background: #faf7ff; border: 1px solid #e3d8f6; border-radius: 12px; padding: 11px 14px; outline: none; }
+    .save-input { flex: 1; font-family: 'Inter', sans-serif; font-size: 14px; color: #231a3b; background: #faf7ff; border: 1px solid #e3d8f6; border-radius: 12px; padding: 11px 14px; outline: none; }
     .save-input:focus { border-color: #b69aef; }
-    .save-btn { background: #8a63d8; color: #fff; border: none; border-radius: 12px; padding: 11px 16px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .save-btn { background: #6d4ae6; color: #fff; border: none; border-radius: 12px; padding: 11px 16px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; }
     .save-btn:disabled { opacity: .45; cursor: default; }
-    .cancel-btn { background: #f4eefc; color: #8a63d8; border: 1px solid #e3d8f6; border-radius: 12px; width: 42px; height: 42px; cursor: pointer; font-size: 15px; flex-shrink: 0; }
-    .panel { margin-top: 30px; background: #ffffff; border: 1px solid #ece3f9; border-radius: 18px; overflow: hidden; box-shadow: 0 22px 48px -26px rgba(108,68,192,.45); }
-    .panel-top { border-top: 3px solid #8a63d8; }
+    .cancel-btn { background: #f4eefc; color: #6d4ae6; border: 1px solid #e3d8f6; border-radius: 12px; width: 42px; height: 42px; cursor: pointer; font-size: 15px; flex-shrink: 0; }
+    .panel { margin-top: 30px; background: #ffffff; border: 1px solid #ece3f9; border-radius: 18px; overflow: hidden; box-shadow: 0 22px 48px -26px rgba(78,47,181,.45); }
+    .panel-top { border-top: 3px solid #6d4ae6; }
     .lens-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 18px 20px 14px; }
-    .lens-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -0.3px; color: #2c2540; }
+    .lens-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -0.3px; color: #231a3b; }
     .lens-sub { font-family: 'Space Mono', monospace; font-size: 12px; color: #9a8fb5; margin-top: 3px; }
-    .lens-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #8a63d8; background: #f4eefc; border: 1px solid #e3d8f6; border-radius: 6px; padding: 4px 7px; white-space: nowrap; }
+    .lens-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #6d4ae6; background: #f4eefc; border: 1px solid #e3d8f6; border-radius: 6px; padding: 4px 7px; white-space: nowrap; }
     .why { padding: 0 20px 14px; color: #6c6385; font-size: 13px; line-height: 1.5; }
-    .swap { margin: 0 20px 16px; padding: 9px 12px; background: #f5f0fd; border: 1px solid #e7dcfa; border-radius: 10px; font-size: 12px; color: #6c44c0; line-height: 1.45; display: flex; gap: 8px; }
+    .swap { margin: 0 20px 16px; padding: 9px 12px; background: #f5f0fd; border: 1px solid #e7dcfa; border-radius: 10px; font-size: 12px; color: #4e2fb5; line-height: 1.45; display: flex; gap: 8px; }
     .divider { height: 1px; background: #f0e9fa; margin: 0 20px; }
     .readout { display: flex; align-items: center; gap: 16px; padding: 18px 20px; }
     .stats { display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .stat-label { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #9a8fb5; }
     .stat-val { font-family: 'Space Mono', monospace; font-weight: 700; line-height: 1; margin-top: 3px; }
-    .stat-val.f { font-size: 30px; color: #6c44c0; }
-    .stat-val.sm { font-size: 18px; color: #2c2540; }
+    .stat-val.f { font-size: 30px; color: #4e2fb5; }
+    .stat-val.sm { font-size: 18px; color: #231a3b; }
     .stat-note { font-size: 11px; color: #9a8fb5; margin-top: 4px; }
     .meta { padding: 4px 20px 6px; }
     .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f3eefc; }
     .meta-row:last-child { border-bottom: none; }
     .meta-k { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #9a8fb5; }
-    .meta-v { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: #2c2540; }
-    .meta-v.focus { color: #2da98c; }
-    .tip { margin: 8px 20px 0; padding: 13px 15px; background: #f5f0fd; border-left: 3px solid #8a63d8; border-radius: 0 8px 8px 0; font-size: 13px; line-height: 1.5; color: #514a68; }
-    .warn { margin: 10px 20px 20px; display: flex; gap: 9px; align-items: flex-start; font-size: 12.5px; line-height: 1.45; color: #8a63d8; }
+    .meta-v { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: #231a3b; }
+    .meta-v.focus { color: #13a892; }
+    .tip { margin: 8px 20px 0; padding: 13px 15px; background: #f5f0fd; border-left: 3px solid #6d4ae6; border-radius: 0 8px 8px 0; font-size: 13px; line-height: 1.5; color: #514a68; }
+    .warn { margin: 10px 20px 20px; display: flex; gap: 9px; align-items: flex-start; font-size: 12.5px; line-height: 1.45; color: #6d4ae6; }
     .warn span:first-child { flex-shrink: 0; }
     .pad-b { padding-bottom: 18px; }
-    .frame-card { margin-top: 18px; background: #ffffff; border: 1px solid #ece3f9; border-radius: 18px; overflow: hidden; box-shadow: 0 22px 48px -28px rgba(108,68,192,.4); }
+    .frame-card { margin-top: 18px; background: #ffffff; border: 1px solid #ece3f9; border-radius: 18px; overflow: hidden; box-shadow: 0 22px 48px -28px rgba(78,47,181,.4); }
     .frame-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 12px; }
-    .frame-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; color: #2c2540; }
+    .frame-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; color: #231a3b; }
     .frame-badge { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #9a8fb5; }
     .frame-media { padding: 0 14px; }
     .frame-caption { padding: 6px 18px 2px; font-size: 12px; color: #9a8fb5; }
     .tips { padding: 10px 18px 18px; display: flex; flex-direction: column; gap: 10px; }
-    .tips-h { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a63d8; margin-top: 2px; }
+    .tips-h { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6d4ae6; margin-top: 2px; }
     .tip-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.45; color: #514a68; }
-    .tip-num { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: #f4eefc; border: 1px solid #e3d8f6; color: #8a63d8; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .tip-num { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: #f4eefc; border: 1px solid #e3d8f6; color: #6d4ae6; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
     .foot { margin: 22px 4px 0; font-size: 11.5px; color: #9a8fb5; line-height: 1.5; font-family: 'Space Mono', monospace; }
     .brandrow { display: flex; align-items: center; gap: 13px; }
-    .brand-logo { flex-shrink: 0; filter: drop-shadow(0 8px 18px rgba(108,68,192,.35)); }
-    .credit { margin: 28px 0 0; padding: 22px 20px 22px; background: linear-gradient(150deg, #f4ecfd 0%, #fbf8ff 60%, #f7f1fe 100%); border: 1px solid #e7dcf7; border-radius: 18px; text-align: center; box-shadow: 0 18px 40px -28px rgba(108,68,192,.45); }
+    .brand-logo { flex-shrink: 0; filter: drop-shadow(0 8px 18px rgba(78,47,181,.35)); }
+    .credit { margin: 28px 0 0; padding: 22px 20px 22px; background: linear-gradient(150deg, #f4ecfd 0%, #fbf8ff 60%, #f7f1fe 100%); border: 1px solid #e7dcf7; border-radius: 18px; text-align: center; box-shadow: 0 18px 40px -28px rgba(78,47,181,.45); }
     .credit-logo { margin-bottom: 11px; }
     .credit-by { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #6c6385; }
-    .credit-by strong { color: #6c44c0; font-weight: 700; }
+    .credit-by strong { color: #4e2fb5; font-weight: 700; }
     .credit-msg { margin-top: 7px; font-size: 13px; line-height: 1.5; color: #7a7194; }
-    .credit-mail { display: inline-block; margin-top: 11px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: #ffffff; background: #8a63d8; text-decoration: none; padding: 9px 18px; border-radius: 999px; box-shadow: 0 8px 20px -8px #8a63d8cc; transition: all .18s ease; }
-    .credit-mail:hover { background: #7657c9; transform: translateY(-1px); }
+    .credit-mail { display: inline-block; margin-top: 11px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: #ffffff; background: #6d4ae6; text-decoration: none; padding: 9px 18px; border-radius: 999px; box-shadow: 0 8px 20px -8px #6d4ae6cc; transition: all .18s ease; }
+    .credit-mail:hover { background: #5a39c9; transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -225,10 +225,10 @@
       const k = openFrac(f); const base = 46;
       return (
         <svg viewBox="0 0 120 120" width="104" height="104" aria-hidden="true">
-          <defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#d8c4fb" stopOpacity="0.95" /><stop offset="60%" stopColor="#9171e0" stopOpacity="0.5" /><stop offset="100%" stopColor="#9171e0" stopOpacity="0" /></radialGradient></defs>
+          <defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#d8c4fb" stopOpacity="0.95" /><stop offset="60%" stopColor="#8b6cf0" stopOpacity="0.5" /><stop offset="100%" stopColor="#8b6cf0" stopOpacity="0" /></radialGradient></defs>
           <circle cx="60" cy="60" r="52" fill="none" stroke="#e3d8f6" strokeWidth="2" /><circle cx="60" cy="60" r="50" fill="none" stroke="#f1ecfb" strokeWidth="6" />
           <g style={{ transform: `scale(${k})`, transformOrigin: "60px 60px", transition: "transform .45s cubic-bezier(.34,1.2,.4,1)" }}>
-            <circle cx="60" cy="60" r={base + 4} fill="url(#glow)" /><polygon points={heptagon(60, 60, base)} fill="#ffffff" stroke="#8a63d8" strokeWidth="1.6" strokeLinejoin="round" />
+            <circle cx="60" cy="60" r={base + 4} fill="url(#glow)" /><polygon points={heptagon(60, 60, base)} fill="#ffffff" stroke="#6d4ae6" strokeWidth="1.6" strokeLinejoin="round" />
           </g>
           <g stroke="#ece3f9" strokeWidth="1">{[...Array(7)].map((_, i) => { const a = (Math.PI * 2 * i) / 7 - Math.PI / 2; return <line key={i} x1={60 + 50 * Math.cos(a)} y1={60 + 50 * Math.sin(a)} x2={60 + 30 * Math.cos(a)} y2={60 + 30 * Math.sin(a)} />; })}</g>
         </svg>
@@ -239,13 +239,13 @@
     }
     function FrameExample({ scene }) {
       const scenes = {
-        retrato: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" /><circle cx="250" cy="70" r="34" fill="#c9b4f0" opacity="0.45" /><circle cx="285" cy="130" r="22" fill="#d9c9f5" opacity="0.5" /><circle cx="215" cy="150" r="16" fill="#cebbf2" opacity="0.4" /><circle cx="107" cy="96" r="26" fill="#8a63d8" /><path d="M70 200 Q70 150 107 150 Q144 150 144 200 Z" fill="#8a63d8" /><g stroke="#2da98c" strokeWidth="2.4" fill="none"><path d="M104 86 h-9 v-9" /><path d="M120 86 h9 v-9" /><path d="M104 100 h-9 v9" /><path d="M120 100 h9 v9" /></g></g>),
-        grupo: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" />{[78, 138, 198, 252].map((x, i) => (<g key={i}><circle cx={x} cy={88 + (i % 2 === 0 ? 0 : 10)} r="22" fill={i % 2 ? "#9c7ee0" : "#8a63d8"} /><path d={`M${x - 30} 200 Q${x - 30} 132 ${x} 132 Q${x + 30} 132 ${x + 30} 200 Z`} fill={i % 2 ? "#9c7ee0" : "#8a63d8"} /></g>))}</g>),
-        calle: (<g><rect width="320" height="200" fill="#f3eefc" /><rect width="320" height="120" fill="url(#skyL)" /><rect x="0" y="40" width="70" height="160" fill="#cdbcef" /><rect x="250" y="30" width="70" height="170" fill="#bda6ea" /><rect x="62" y="70" width="40" height="130" fill="#d9ccf4" /><rect x="218" y="64" width="42" height="136" fill="#cabbef" /><polygon points="120,200 200,200 175,86 145,86" fill="#e7ddf7" /><line x1="160" y1="200" x2="160" y2="92" stroke="#ffffff" strokeWidth="3" strokeDasharray="9 8" /><circle cx="213" cy="120" r="8" fill="#6c44c0" /><rect x="208" y="128" width="10" height="20" rx="4" fill="#6c44c0" /></g>),
-        paisaje: (<g><rect width="320" height="200" fill="url(#skyL)" /><circle cx="213" cy="60" r="20" fill="#c9b4f0" opacity="0.85" /><path d="M0 134 Q80 108 170 134 T320 130 V200 H0 Z" fill="#b9a3e8" /><path d="M0 150 Q120 126 230 152 T320 148 V200 H0 Z" fill="#9171e0" /><path d="M0 172 Q90 158 200 174 T320 170 V200 H0 Z" fill="#7657c9" /></g>),
-        lejano: (<g><rect width="320" height="200" fill="url(#skyL)" /><path d="M0 150 Q160 120 320 150 V200 H0 Z" fill="#d4c4f2" /><path d="M0 166 Q160 140 320 166 V200 H0 Z" fill="#b9a3e8" /><path d="M0 182 Q160 162 320 182 V200 H0 Z" fill="#9171e0" /><circle cx="160" cy="67" r="10" fill="#6c44c0" /><g stroke="#2da98c" strokeWidth="2.2" fill="none"><path d="M150 56 h-8 v-8" /><path d="M170 56 h8 v-8" /><path d="M150 78 h-8 v8" /><path d="M170 78 h8 v8" /></g></g>),
+        retrato: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" /><circle cx="250" cy="70" r="34" fill="#c9b4f0" opacity="0.45" /><circle cx="285" cy="130" r="22" fill="#d9c9f5" opacity="0.5" /><circle cx="215" cy="150" r="16" fill="#cebbf2" opacity="0.4" /><circle cx="107" cy="96" r="26" fill="#6d4ae6" /><path d="M70 200 Q70 150 107 150 Q144 150 144 200 Z" fill="#6d4ae6" /><g stroke="#13a892" strokeWidth="2.4" fill="none"><path d="M104 86 h-9 v-9" /><path d="M120 86 h9 v-9" /><path d="M104 100 h-9 v9" /><path d="M120 100 h9 v9" /></g></g>),
+        grupo: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" />{[78, 138, 198, 252].map((x, i) => (<g key={i}><circle cx={x} cy={88 + (i % 2 === 0 ? 0 : 10)} r="22" fill={i % 2 ? "#9c7ee0" : "#6d4ae6"} /><path d={`M${x - 30} 200 Q${x - 30} 132 ${x} 132 Q${x + 30} 132 ${x + 30} 200 Z`} fill={i % 2 ? "#9c7ee0" : "#6d4ae6"} /></g>))}</g>),
+        calle: (<g><rect width="320" height="200" fill="#f3eefc" /><rect width="320" height="120" fill="url(#skyL)" /><rect x="0" y="40" width="70" height="160" fill="#cdbcef" /><rect x="250" y="30" width="70" height="170" fill="#bda6ea" /><rect x="62" y="70" width="40" height="130" fill="#d9ccf4" /><rect x="218" y="64" width="42" height="136" fill="#cabbef" /><polygon points="120,200 200,200 175,86 145,86" fill="#e7ddf7" /><line x1="160" y1="200" x2="160" y2="92" stroke="#ffffff" strokeWidth="3" strokeDasharray="9 8" /><circle cx="213" cy="120" r="8" fill="#4e2fb5" /><rect x="208" y="128" width="10" height="20" rx="4" fill="#4e2fb5" /></g>),
+        paisaje: (<g><rect width="320" height="200" fill="url(#skyL)" /><circle cx="213" cy="60" r="20" fill="#c9b4f0" opacity="0.85" /><path d="M0 134 Q80 108 170 134 T320 130 V200 H0 Z" fill="#b9a3e8" /><path d="M0 150 Q120 126 230 152 T320 148 V200 H0 Z" fill="#8b6cf0" /><path d="M0 172 Q90 158 200 174 T320 170 V200 H0 Z" fill="#5a39c9" /></g>),
+        lejano: (<g><rect width="320" height="200" fill="url(#skyL)" /><path d="M0 150 Q160 120 320 150 V200 H0 Z" fill="#d4c4f2" /><path d="M0 166 Q160 140 320 166 V200 H0 Z" fill="#b9a3e8" /><path d="M0 182 Q160 162 320 182 V200 H0 Z" fill="#8b6cf0" /><circle cx="160" cy="67" r="10" fill="#4e2fb5" /><g stroke="#13a892" strokeWidth="2.2" fill="none"><path d="M150 56 h-8 v-8" /><path d="M170 56 h8 v-8" /><path d="M150 78 h-8 v8" /><path d="M170 78 h8 v8" /></g></g>),
         comida: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" /><rect x="46" y="84" width="6" height="46" rx="3" fill="#b9a3e8" /><rect x="268" y="84" width="6" height="46" rx="3" fill="#b9a3e8" /><circle cx="160" cy="104" r="66" fill="#ffffff" stroke="#e3d8f6" strokeWidth="3" /><circle cx="160" cy="104" r="42" fill="#cdbcef" /><circle cx="148" cy="94" r="13" fill="#b59be8" /><circle cx="176" cy="114" r="9" fill="#a98fe0" /></g>),
-        flores: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" /><circle cx="252" cy="150" r="26" fill="#c9b4f0" opacity="0.4" /><circle cx="282" cy="92" r="18" fill="#d9c9f5" opacity="0.5" /><rect x="104" y="100" width="6" height="94" rx="3" fill="#7657c9" /><g transform="translate(107,94)"><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(60)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(120)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(180)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(240)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(300)" /><circle r="11" fill="#8a63d8" /></g><g stroke="#2da98c" strokeWidth="2.2" fill="none"><path d="M97 84 h-8 v-8" /><path d="M117 84 h8 v-8" /><path d="M97 104 h-8 v8" /><path d="M117 104 h8 v8" /></g></g>),
+        flores: (<g><rect width="320" height="200" fill="#efe7fb" /><rect width="320" height="200" fill="url(#softL)" /><circle cx="252" cy="150" r="26" fill="#c9b4f0" opacity="0.4" /><circle cx="282" cy="92" r="18" fill="#d9c9f5" opacity="0.5" /><rect x="104" y="100" width="6" height="94" rx="3" fill="#5a39c9" /><g transform="translate(107,94)"><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(60)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(120)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(180)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(240)" /><ellipse cx="0" cy="-20" rx="9" ry="18" fill="#b9a3e8" transform="rotate(300)" /><circle r="11" fill="#6d4ae6" /></g><g stroke="#13a892" strokeWidth="2.2" fill="none"><path d="M97 84 h-8 v-8" /><path d="M117 84 h8 v-8" /><path d="M97 104 h-8 v8" /><path d="M117 104 h8 v8" /></g></g>),
       };
       return (
         <svg viewBox="0 0 320 200" width="100%" style={{ display: "block", borderRadius: 12 }} aria-label="Ejemplo de composición">
@@ -260,27 +260,28 @@
       );
     }
 
-    function Logo({ size = 50 }) {
-      const cx = 32, cy = 37;
+    function Logo({ size = 72 }) {
+      const cx = 40, cy = 40;
       return (
-        <svg className="brand-logo" viewBox="0 0 64 64" width={size} height={size} role="img" aria-label="KOM · Asistente de disparo">
+        <svg className="brand-logo" viewBox="0 0 80 80" width={size} height={size} role="img" aria-label="KOM · Asistente de disparo">
           <defs>
-            <linearGradient id="logoBody" x1="0.1" y1="0" x2="0.85" y2="1"><stop offset="0%" stopColor="#a382ec" /><stop offset="52%" stopColor="#7d55d2" /><stop offset="100%" stopColor="#5a32ab" /></linearGradient>
-            <radialGradient id="logoWell" cx="50%" cy="36%" r="70%"><stop offset="0%" stopColor="#6a45b6" /><stop offset="100%" stopColor="#37206f" /></radialGradient>
-            <radialGradient id="logoOpen" cx="50%" cy="38%" r="65%"><stop offset="0%" stopColor="#5c3aab" /><stop offset="100%" stopColor="#2c1a5d" /></radialGradient>
+            <radialGradient id="lensBarrel" cx="38%" cy="30%" r="78%"><stop offset="0%" stopColor="#8f70f2" /><stop offset="55%" stopColor="#6d4ae6" /><stop offset="100%" stopColor="#46299f" /></radialGradient>
+            <radialGradient id="lensGlass" cx="42%" cy="32%" r="72%"><stop offset="0%" stopColor="#5b3dc6" /><stop offset="100%" stopColor="#291663" /></radialGradient>
+            <radialGradient id="lensOpen" cx="46%" cy="36%" r="68%"><stop offset="0%" stopColor="#4a2ea3" /><stop offset="100%" stopColor="#1f1147" /></radialGradient>
+            <linearGradient id="lensCoat" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#a78ef7" /><stop offset="50%" stopColor="#26d6b4" /><stop offset="100%" stopColor="#a78ef7" /></linearGradient>
           </defs>
-          <polygon points="23,13 26,6 38,6 41,13" fill="url(#logoBody)" />
-          <rect x="3.5" y="12.5" width="57" height="46" rx="14.5" fill="url(#logoBody)" />
-          <rect x="4.7" y="13.7" width="54.6" height="43.6" rx="13.3" fill="none" stroke="#ffffff" strokeOpacity="0.22" strokeWidth="1.3" />
-          <circle cx="50.5" cy="21" r="2.3" fill="#ffffff" fillOpacity="0.85" />
-          <circle cx={cx} cy={cy} r="17" fill="url(#logoWell)" />
-          <circle cx={cx} cy={cy} r="17" fill="none" stroke="#ffffff" strokeOpacity="0.5" strokeWidth="2" />
-          <circle cx={cx} cy={cy} r="13" fill="none" stroke="#ffffff" strokeOpacity="0.12" strokeWidth="0.8" />
-          <polygon points={heptagon(cx, cy, 13)} fill="#efe7fb" />
-          <g stroke="#b89cf0" strokeWidth="0.9" strokeLinecap="round">{[...Array(7)].map((_, i) => { const a = (Math.PI * 2 * i) / 7 - Math.PI / 2; return <line key={i} x1={cx + 13 * Math.cos(a)} y1={cy + 13 * Math.sin(a)} x2={cx + 9.2 * Math.cos(a)} y2={cy + 9.2 * Math.sin(a)} />; })}</g>
-          <circle cx={cx} cy={cy} r="9.3" fill="url(#logoOpen)" />
-          <circle cx={cx} cy={cy} r="9.3" fill="none" stroke="#ffffff" strokeOpacity="0.25" strokeWidth="0.8" />
-          <text x={cx} y={cy + 2.9} textAnchor="middle" fontFamily="'Space Grotesk', sans-serif" fontWeight="700" fontSize="7.7" letterSpacing="-0.4" fill="#ffffff">KOM</text>
+          <circle cx={cx} cy={cy} r="38.5" fill="url(#lensBarrel)" />
+          <circle cx={cx} cy={cy} r="38.5" fill="none" stroke="#ffffff" strokeOpacity="0.22" strokeWidth="1.6" />
+          <circle cx={cx} cy={cy} r="34" fill="none" stroke="#1f1147" strokeOpacity="0.35" strokeWidth="1.4" />
+          <circle cx={cx} cy={cy} r="32" fill="url(#lensGlass)" />
+          <circle cx={cx} cy={cy} r="32" fill="none" stroke="url(#lensCoat)" strokeOpacity="0.6" strokeWidth="2.2" />
+          <circle cx={cx} cy={cy} r="26" fill="none" stroke="#ffffff" strokeOpacity="0.1" strokeWidth="1" />
+          <polygon points={heptagon(cx, cy, 24)} fill="#efe7fb" />
+          <g stroke="#b89cf0" strokeWidth="1.3" strokeLinecap="round">{[...Array(7)].map((_, i) => { const a = (Math.PI * 2 * i) / 7 - Math.PI / 2; return <line key={i} x1={cx + 24 * Math.cos(a)} y1={cy + 24 * Math.sin(a)} x2={cx + 17 * Math.cos(a)} y2={cy + 17 * Math.sin(a)} />; })}</g>
+          <circle cx={cx} cy={cy} r="17.6" fill="url(#lensOpen)" />
+          <circle cx={cx} cy={cy} r="17.6" fill="none" stroke="#ffffff" strokeOpacity="0.28" strokeWidth="1" />
+          <ellipse cx="29" cy="27" rx="9" ry="4.6" transform="rotate(-38 29 27)" fill="#ffffff" fillOpacity="0.28" />
+          <text x={cx} y={cy + 5.2} textAnchor="middle" fontFamily="'Space Grotesk', sans-serif" fontWeight="700" fontSize="14.5" letterSpacing="-0.6" fill="#ffffff">KOM</text>
         </svg>
       );
     }
@@ -318,7 +319,7 @@
         <div className="wrap">
           <div className="inner">
             <div className="brandrow">
-              <Logo />
+              <Logo size={60} />
               <div className="eyebrow"><span className="dot" />α6400 · asistente de disparo</div>
             </div>
             <h1>¿Qué saco ahora?</h1>
@@ -405,7 +406,7 @@
             <p className="foot">Valores de partida, no reglas fijas. Tu A6400 no estabiliza el cuerpo: la velocidad es tu defensa contra el movido con los Sigma f/1.4.</p>
 
             <div className="credit">
-              <div className="credit-logo"><Logo size={42} /></div>
+              <div className="credit-logo"><Logo size={68} /></div>
               <div className="credit-by">Creado por <strong>Karina Orellana</strong></div>
               <div className="credit-msg">¿Quieres tu versión personalizada, para tu cámara y tus lentes? Escríbeme y la preparo para ti.</div>
               <a className="credit-mail" href="mailto:karinaorellanamoreira@gmail.com?subject=Quiero%20mi%20versi%C3%B3n%20personalizada%20del%20Asistente%20de%20disparo">karinaorellanamoreira@gmail.com</a>
